@@ -1,4 +1,27 @@
 import streamlit as st
+import pandas as pd
 
-st.title("菊川町スポーツ大会")
-st.write("Run for everyone!")
+# タイトルとサブタイトル
+st.title("菊川町スポーツ大会 2024")
+st.subheader("Run for everyone!")
+
+# 背景色を若葉色に設定するためのカスタムCSS
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #7FFF00;  /* 若葉色のコード (若干明るい黄緑) */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# Google Driveの共有リンクからファイルを読み込む
+#url = 'https://drive.google.com/uc?id=ファイルID'
+url="https://drive.google.com/file/d/1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM/view?usp=sharing"
+df = pd.read_csv(url)
+
+# 表形式で表示
+st.write(df)
