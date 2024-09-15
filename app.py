@@ -26,13 +26,17 @@ st.markdown(
 
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
-#url="https://drive.google.com/file/d/1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM/view?usp=sharing"
-url='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
-
+#Q_町会マスタ_総合順位_繰上
+url1='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
+#Q_町会マスタ_総合順位_繰上
+url2='https://drive.google.com/uc?id=1Sh8YcsmhfBTrWYgx-fz9E7Nb52e83LAg'
 try:
     #encodingやon_bad_lines='skip'を使用して不正な行をスキップ
-    df = pd.read_csv(url, on_bad_lines='skip', encoding='utf-8')
+    df1 = pd.read_csv(url1, on_bad_lines='skip', encoding='utf-8')
+    df2 = pd.read_csv(url2, on_bad_lines='skip', encoding='utf-8')
+ 
     # 表形式で表示
-    st.write(df)
+    st.write(df1)
+    st.write(df2)
 except pd.errors.ParserError as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")
