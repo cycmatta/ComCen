@@ -7,13 +7,13 @@ st.subheader("Run for everyone!")
 
 # 背景色を若葉色に設定するためのカスタムCSS
 st.markdown(
-    
+    """
     <style>
     body {
         background-color: #7FFF00;  /* 若葉色のコード (若干明るい黄緑) */
     }
     </style>
-    ,
+    """,
     unsafe_allow_html=True
 )
 
@@ -30,4 +30,3 @@ try:
     st.write(df)
 except pd.errors.ParserError as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")
-    
