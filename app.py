@@ -24,8 +24,8 @@ st.markdown(
 url='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
 
 try:
-    #encodingやエラーハンドリングを追加
-    df = pd.read_csv(url, error_bad_lines=False, warn_bad_lines=True)
+    #encodingやon_bad_lines='skip'を使用して不正な行をスキップ
+    df = pd.read_csv(url, on_bad_lines='skip', encoding='utf-8')
     # 表形式で表示
     st.write(df)
 except pd.errors.ParserError as e:
