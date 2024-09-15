@@ -20,7 +20,8 @@ st.markdown(
 
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
-url="https://drive.google.com/file/d/1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM/view?usp=sharing"
+#url="https://drive.google.com/file/d/1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM/view?usp=sharing"
+url='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
 df = pd.read_csv(url)
 
 # 表形式で表示
