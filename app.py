@@ -9,8 +9,14 @@ st.subheader("Run for everyone!")
 st.markdown(
     """
     <style>
+    /* ページ全体の背景色を若葉色に設定 */
     body {
-        background-color: #7FFF00;  /* 若葉色のコード (若干明るい黄緑) */
+        background-color: #7FFF00;
+    }
+
+    /* メインコンテンツの背景も変更 */
+    .stApp {
+        background-color: #7FFF00;
     }
     </style>
     """,
