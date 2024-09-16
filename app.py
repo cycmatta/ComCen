@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 
 # タイトルとサブタイトル
-st.title("菊川町スポーツ大会 2024")
-st.subheader("Run for everyone!")
+st.title("きくがわスポーツ大会 2024")
+st.subheader("みんなの声に力がわいてくる！")
 
 # 背景色を若葉色に設定するためのカスタムCSS
 st.markdown(
@@ -26,7 +26,7 @@ st.markdown(
 
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
-#Q_町会マスタ_総合順位_繰上
+#Q_大会記録のクロス集計
 url1='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
 #Q_町会マスタ_総合順位_繰上
 url2='https://drive.google.com/uc?id=1Sh8YcsmhfBTrWYgx-fz9E7Nb52e83LAg'
