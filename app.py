@@ -35,9 +35,9 @@ try:
     df1 = pd.read_csv(url1, on_bad_lines='skip', encoding='utf-8')
     df2 = pd.read_csv(url2, on_bad_lines='skip', encoding='utf-8')
  
-    # 最新の更新日時を取得(更新日時を日付型に変換、最大値を取得、最大値を表示)
-    df1['更新日時']=pd.to_datetime(df1['更新日時'])
-    max_date=df1['更新日時'].max()
+    # df2の最新の更新日時を取得(更新日時を日付型に変換、最大値を取得、最大値を表示)
+    df2['更新日時']=pd.to_datetime(df2['更新日時'])
+    max_date=df2['更新日時'].max()
     st.write(f"最新更新日時: {max_date}")
     # 表形式で表示
     st.write(df1)
