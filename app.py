@@ -42,16 +42,16 @@ try:
     st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
     
     # 表形式で表示
-    #st.write(df1)
-    #st.write(df2)
+    st.write(df1)
+    st.write(df2)
 
     # インデックスをリセットし、None/NaNを空文字に置き換え
-    df1_clean = df1.fillna("").reset_index(drop=True)
-    df2_clean = df2.fillna("").reset_index(drop=True)
+    #df1_clean = df1.fillna("").reset_index(drop=True)
+    #df2_clean = df2.fillna("").reset_index(drop=True)
 
     # インデックスを非表示にして表形式で表示(クロス集計は整数で表示)
-    st.table(df1_clean.style.hide(axis='index').format(precision=0))
-    st.table(df2_clean.style.hide(axis='index'))
+    #st.table(df1_clean.style.hide(axis='index').format(precision=0))
+    #st.table(df2_clean.style.hide(axis='index'))
 
 except pd.errors.ParserError as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")
