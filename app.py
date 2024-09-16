@@ -41,12 +41,12 @@ try:
     #25pxで、st.write(f"最新更新日時: {max_date}")
     st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
     
-    # 表示する列の順番を指定
+    # df2は表示する列の順番を指定
     columns_order = ['総合順位', '町会NO', '町会', '繰越点','得点合計','総合計']  # 順番を指定
 
     # 表形式で表示
     st.write(df1)
-    st.write(df2)
+    st.write(df2[columns_order])
 
     # インデックスをリセットし、None/NaNを空文字に置き換え
     #df1_clean = df1.fillna("").reset_index(drop=True)
