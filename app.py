@@ -38,9 +38,24 @@ try:
     # df2の最新の更新日時を取得(更新日時を日付型に変換、最大値を取得、最大値を表示)
     df2['更新日時']=pd.to_datetime(df2['更新日時'])
     max_date=df2['更新日時'].max()
-    st.write(f"最新更新日時: {max_date}")
+    #st.write(f"最新更新日時: {max_date}")
+    st.markdown(f"<p style='font-size:20px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
+    
     # 表形式で表示
-    st.write(df1)
-    st.write(df2)
+    #st.write(df1)
+    #st.write(df2)
+
+    # インデックスをリセットして表示（インデックス非表示）
+    st.write(df1.reset_index(drop=True))
+    st.write(df2.reset_index(drop=True))
+
+    # None/NaNを空文字に置き換え
+    df1_clean = df1.fillna("")
+    df2_clean = df2.fillna("")
+
+    # インデックスをリセットして表示
+    st.write(df1_clean.reset_index(drop=True))
+    st.write(df2_clean.reset_index(drop=True))
+
 except pd.errors.ParserError as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")
