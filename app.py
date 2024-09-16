@@ -38,16 +38,13 @@ try:
     # df2の最新の更新日時を取得(更新日時を日付型に変換、最大値を取得、最大値を表示)
     df2['更新日時']=pd.to_datetime(df2['更新日時'])
     max_date=df2['更新日時'].max()
-    #25pxで、st.write(f"最新更新日時: {max_date}")
+    #25pxで表示。st.write(f"最新更新日時: {max_date}")
     st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
     
     # df2は表示する列の順番を指定
     columns_order = ['総合順位', '町会NO', '町会', '繰越点','得点合計','総合計']  # 順番を指定
 
     # 表形式で表示
-    #25pxで、st.write(f"最新更新日時: {max_date}")
-    st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
-
     st.write("大会記録のクロス集計")
     st.write(df1)
 
