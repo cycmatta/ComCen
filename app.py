@@ -50,8 +50,8 @@ try:
     df2_clean = df2.fillna("").reset_index(drop=True)
 
     # インデックスを非表示にして表形式で表示(クロス集計は整数で表示)
-    st.dataframe(df1_clean.style.hide(axis='index').format(precision=0))
-    st.dataframe(df2_clean.style.hide(axis='index'))
+    st.table(df1_clean.style.hide(axis='index').format(precision=0))
+    st.table(df2_clean.style.hide(axis='index'))
 
 except pd.errors.ParserError as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")
