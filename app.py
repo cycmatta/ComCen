@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# タイトルとサブタイトル
-st.title("きくがわスポーツ大会 2024")
-st.subheader("みんなの声に力がわいてくる！")
-
 # 背景色を若葉色に設定するためのカスタムCSS
 st.markdown(
     """
@@ -24,6 +20,10 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+# タイトルとサブタイトル
+st.title("きくがわスポーツ大会 2024")
+st.subheader("みんなの声に力がわいてくる！")
 
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
