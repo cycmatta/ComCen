@@ -9,20 +9,19 @@ st.subheader("みんなの声に力がわいてくる！")
 st.markdown(
     """
     <style>
-    /* ページ全体の背景色を若葉色に設定 */
+    /* ページ全体の背景色を緑色に設定 */
     body {
-        background-color: #7FFF00;
+        background-color: #008000;
     }
 
     /* メインコンテンツの背景も変更 */
-    .stApp {
-        background-color: #7FFF00;
-    }
+    /*.stApp {
+        background-color: #008000;
+    }*/
     </style>
     """,
     unsafe_allow_html=True
 )
-
 
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
