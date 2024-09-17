@@ -15,9 +15,9 @@ st.markdown(
     }
 
     /* メインコンテンツの背景も変更 */
-    /*.stApp {
+    .stApp {
         background-color: #008000;
-    }*/
+    }
     </style>
     """,
     unsafe_allow_html=True
