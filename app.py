@@ -28,7 +28,7 @@ st.subheader("みんなの声に力がわいてくる！")
 # Google Driveの共有リンクからファイルを読み込む
 #url = 'https://drive.google.com/uc?id=ファイルID'
 #Q_大会記録のクロス集計
-url1='https://drive.google.com/uc?id=1Y7mPE4ikULQVi6T6TGDYlhz1nT2r-hXM'
+url1='https://drive.google.com/uc?id=1kYeIXoe0DC__s9oYqmM16M-YbWU_3W-s'
 #Q_町会マスタ_総合順位_繰上
 url2='https://drive.google.com/uc?id=1Sh8YcsmhfBTrWYgx-fz9E7Nb52e83LAg'
 try:
@@ -52,11 +52,11 @@ try:
     st.write("総合順位")
     st.write(df2[columns_order])
 
-    # インデックスをリセットし、None/NaNを空文字に置き換え
+    # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
     #df2_clean = df2.fillna("").reset_index(drop=True)
 
-    # インデックスを非表示にして表形式で表示(クロス集計は整数で表示)
+    # インデックスを非表示にして表形式で表示(クロス集計は整数で表示)(うまく動作しないのでボツ)
     #st.table(df1_clean.style.hide(axis='index').format(precision=0))
     #st.table(df2_clean.style.hide(axis='index'))
 
