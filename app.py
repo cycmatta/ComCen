@@ -9,13 +9,15 @@ st.subheader("みんなの声に力がわいてくる！")
 st.markdown(
     """
     <style>
-    /* ページ全体の背景色を緑色に設定 */
+    /* 文字の色: 白,ページ全体の背景色を緑色に設定 */
     body {
+        color: #FFFFFF;
         background-color: #008000;
     }
 
     /* メインコンテンツの背景も変更 */
     .stApp {
+        color: #FFFFFF;
         background-color: #008000;
     }
     </style>
