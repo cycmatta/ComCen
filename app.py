@@ -67,7 +67,7 @@ try:
 
     with tab3:
         st.write("大会記録")
-        st.dataframe(df_sorted3) #ソート指定したdf
+        st.dataframe(df_selected3) #ソート指定したdf
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
