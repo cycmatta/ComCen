@@ -58,16 +58,16 @@ try:
 
     # タブごとに表形式で表示
     with tab1:
-        st.write("総合順位")
+        st.write("総合順位", use_container_width=True)
         st.dataframe(df_selected2) #列を特定したdf
 
     with tab2:
-        st.write("大会記録のクロス集計")
+        st.write("大会記録のクロス集計", use_container_width=True)
         st.dataframe(df1) #ここはそのまま
 
     with tab3:
         st.write("大会記録")
-        st.dataframe(df_selected3) #ソート指定したdf
+        st.dataframe(df_sorted3, use_container_width=True) #ソート指定したdf
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
