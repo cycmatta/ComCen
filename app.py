@@ -46,11 +46,11 @@ try:
     #25pxで表示。st.write(f"最新更新日時: {max_date}")
     st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
     
-    # df2,df3は表示する列の順番を指定
-    columns_order2 = ['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']  # 順番を指定
-    columns_order3 = ['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']  # 順番を指定
-    # df3はソート指定
-    df3_sorted = df3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True]) #全て昇順
+    # df2,df3は表示する列の特定と順番を指定
+    df_selected2 = df2[['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']]
+    df_selected3 = df3[['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']]
+    # df3はソート指定,全て昇順
+    df3_sorted = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
@@ -58,7 +58,7 @@ try:
     # タブごとに表形式で表示
     with tab1:
         st.write("総合順位")
-        st.dataframe(df2[columns_order2])
+        st.dataframe(df_selected2) #列を特定したdf
 
     with tab2:
         st.write("大会記録のクロス集計")
@@ -66,7 +66,7 @@ try:
 
     with tab3:
         st.write("大会記録")
-        st.dataframe(df3[columns_order3])
+        st.dataframe(df3_sorted) #ソート指定したdf
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
