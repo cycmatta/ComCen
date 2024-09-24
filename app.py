@@ -49,13 +49,9 @@ try:
     # df2,df3は表示する列の特定と順番を指定
     df_selected2 = df2[['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']]
     df_selected3 = df3[['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']]
-    
-    st.dataframe(df_selected3)
-    
+        
     # df3はソート指定,全て昇順
-    df3_sorted = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
-
-    st.dataframe(df3_sorted)
+    df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
@@ -71,7 +67,7 @@ try:
 
     with tab3:
         st.write("大会記録")
-        st.dataframe(df3_sorted) #ソート指定したdf
+        st.dataframe(df_sorted3) #ソート指定したdf
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
