@@ -46,8 +46,9 @@ try:
     #25pxで表示。st.write(f"最新更新日時: {max_date}")
     st.markdown(f"<p style='font-size:25px;'>最新更新日時: {max_date}</p>", unsafe_allow_html=True)
     
-    # df2は表示する列の順番を指定
-    columns_order = ['総合順位', '町会NO', '町会', '繰越点','得点合計','総合計']  # 順番を指定
+    # df2,df3は表示する列の順番を指定
+    columns_order2 = ['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']  # 順番を指定
+    columns_order3 = ['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']  # 順番を指定
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
@@ -55,7 +56,7 @@ try:
     # タブごとに表形式で表示
     with tab1:
         st.write("総合順位")
-        st.dataframe(df2[columns_order])
+        st.dataframe(df2[columns_order2])
 
     with tab2:
         st.write("大会記録のクロス集計")
