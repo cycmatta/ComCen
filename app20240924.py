@@ -45,14 +45,12 @@ try:
     # df2は表示する列の順番を指定
     columns_order = ['総合順位', '町会NO', '町会', '繰越点','得点合計','総合計']  # 順番を指定
 
-    # タブごとに表形式で表示
-    with tab1:
-        st.write("総合順位")
-        st.dataframe(df2[columns_order])
+    # 表形式で表示
+    st.write("大会記録のクロス集計")
+    st.write(df1)
 
-    with tab2:
-        st.write("大会記録のクロス集計")
-        st.dataframe(df1)
+    st.write("総合順位")
+    st.write(df2[columns_order])
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
