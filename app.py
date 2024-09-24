@@ -39,8 +39,7 @@ try:
     df1 = pd.read_csv(url1, on_bad_lines='skip', encoding='utf-8')
     df2 = pd.read_csv(url2, on_bad_lines='skip', encoding='utf-8')
     df3 = pd.read_csv(url3, on_bad_lines='skip', encoding='utf-8')
-    #確認用
-    print(df3.columns)
+
     # df2の最新の更新日時を取得(更新日時を日付型に変換、最大値を取得、最大値を表示)
     df2['更新日時']=pd.to_datetime(df2['更新日時'])
     max_date=df2['更新日時'].max()
@@ -53,6 +52,9 @@ try:
         
     # df3はソート指定,全て昇順
     df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
+
+    #確認用
+    print(df3.columns)
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
