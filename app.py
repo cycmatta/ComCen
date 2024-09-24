@@ -49,6 +49,8 @@ try:
     # df2,df3は表示する列の順番を指定
     columns_order2 = ['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']  # 順番を指定
     columns_order3 = ['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']  # 順番を指定
+    # df3はソート指定
+    df3_sorted = df3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True]) #全て昇順
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
@@ -60,11 +62,11 @@ try:
 
     with tab2:
         st.write("大会記録のクロス集計")
-        st.dataframe(df1)
+        st.dataframe(df1) #ここはそのまま
 
     with tab3:
         st.write("大会記録")
-        st.dataframe(df3)
+        st.dataframe(df3_sorted[columns_order3])
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
