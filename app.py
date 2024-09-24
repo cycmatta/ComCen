@@ -54,7 +54,7 @@ try:
     df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
 
     #確認用
-    print(df3.columns)
+    #print(df3.columns)
 
     # タブを作成
     tab1, tab2, tab3 = st.tabs(["総合順位", "クロス集計", "大会記録"])
