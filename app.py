@@ -78,10 +78,10 @@ try:
         st.write("大会記録")
         #st.dataframe(df_sorted3, use_container_width=True) #ソート指定したdf
         
-        # 各グループごとにデータフレームを表示
+        # 各グループごとにデータフレームを表示(インデックス削除)
         for (種目NO, 種目), group in df_grouped3:
             st.write(f"種目NO: {種目NO}  種目名: {種目}")
-            st.dataframe(group[['RaceNO', '順位', '町会NO', '町会', '得点']])
+            st.dataframe(group[['RaceNO', '順位', '町会NO', '町会', '得点']].reset_index(drop=True))
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
     #df1_clean = df1.fillna("").reset_index(drop=True)
