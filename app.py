@@ -51,7 +51,7 @@ try:
     df_selected3 = df3[['種目NO', '種目', 'RaceNO', '順位', '町会NO', '町会', '得点']]
 
     #df_selected3の「種目」の文字列を7文字にカット
-    df_selected3['種目'] = df_selected3['種目'].str[:7]
+    #df_selected3['種目'] = df_selected3['種目'].str[:7]
 
     # df3はソート指定,全て昇順
     df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
@@ -80,7 +80,7 @@ try:
         
         # 各グループごとにデータフレームを表示
         for (種目NO, 種目), group in df_grouped3:
-            st.write(f"種目NO: {種目NO}, 種目名: {種目}")
+            st.write(f"種目NO: {種目NO}  種目名: {種目}")
             st.dataframe(group[['RaceNO', '順位', '町会NO', '町会', '得点']])
 
     # インデックスをリセットし、None/NaNを空文字に置き換え(うまく動作しないのでボツ)
