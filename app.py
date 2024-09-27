@@ -48,8 +48,11 @@ try:
     
     # df2,df3は表示する列の特定と順番を指定
     df_selected2 = df2[['総合順位', '町会NO', '町会', '繰越点', '得点合計', '総合計']]
-    df_selected3 = df3[['種目NO', '種目', 'RaceNO', '町会NO', '町会', '順位', '得点']]
-        
+    df_selected3 = df3[['種目NO', '種目', '順位', 'RaceNO', '町会NO', '町会', '得点']]
+
+    #df_selected3の「種目」の文字列を7文字にカット
+    df_selected3['種目'] = df_selected3['種目'].str[:7]
+
     # df3はソート指定,全て昇順
     df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
 
