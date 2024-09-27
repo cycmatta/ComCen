@@ -57,7 +57,7 @@ try:
     df_sorted3 = df_selected3.sort_values(by=['種目NO', 'RaceNO', '順位'], ascending=[True, True, True])
 
     # df3を'種目NO', '種目'でグループ化
-    df_grouped3 = df_sorted3(['種目NO', '種目']) 
+    df_grouped3 = df_sorted3.groupby(['種目NO', '種目']) 
 
     #確認用
     #print(df3.columns)
